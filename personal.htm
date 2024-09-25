@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+<html>
+
+<head> 
+
+<title>Tom Liu Personal Website</title>
+
+<style>
+
+body {background-color: crimson;}
+.bookmark {background-color: crimson; color: gold; padding: 15px 25px; text-align: center; border: none;}
+.bookmark:hover {background-color: red; color: white;}
+
+.section {}
+
+</style>
+
+<script>
+
+	function scrollToSection(section) {
+		document.getElementById(section).scrollIntoView({
+			behavior: "smooth"
+		});
+	}
+		
+
+</script>
+
+</head>
+
+<body>
+
+<h1 style = "text-align: center;">Tom Liu: The Lone Sigma</h1>
+
+
+<div style = "text-align: center;">
+<button class = "bookmark" onclick="scrollToSection('family')">Family</button>
+<button class = "bookmark" onclick="scrollToSection('passions')">Passions</button>
+<button class = "bookmark" onclick="scrollToSection('piano')">Piano Log</button>
+<button class = "bookmark" onclick="scrollToSection('travel')">Travel</button>
+<button class = "bookmark" onclick="scrollToSection('contact')">Contact Me</button>
+</div>
+
+<div id = "family" class = "section">
+<h1>Family</h1>
+</div>
+
+<div id = "passions" class = "section">
+<h1>Passions</h1>
+</div>
+
+
+<div id = "piano" class = "section">
+<h1>Piano Log</h1>
+</div>
+
+<div id = "travel" class = "section">
+<h1>Travel</h1>
+</div>
+
+<div id = "contact" class = "section">
+<h1>Contact Me</h1>
+</div>
+
+
+</body>
+
+
+
+</html> 
+
+
