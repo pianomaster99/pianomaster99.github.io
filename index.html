@@ -1,80 +1,208 @@
 <!DOCTYPE html>
 <html>
 
-<head> 
+<head>
+    <title>Tom Liu Personal Website</title>
 
-<title>Tom Liu Personal Website</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('fonts/PositionsByArixbored-Regular.otf') format('opentype');
+        }
 
-<style>
+        body {
+            background-color: crimson;
+        }
 
-@font-face {
-  font-family: 'CustomFont';
-  src: url('fonts/PositionsByArixbored-Regular.otf') format('opentype');
-}
+        .bookmark {
+            background-color: crimson;
+            color: gold;
+            padding: 15px 25px;
+            text-align: center;
+            border: none;
+        }
 
-body {background-color: crimson;}
-.bookmark {background-color: crimson; color: gold; padding: 15px 25px; text-align: center; border: none;}
-.bookmark:hover {background-color: red; color: white;}
+        .bookmark:hover {
+            background-color: red;
+            color: white;
+        }
 
-.section {}
+        .section {
+          display: grid;
+          place-items: center; 
+        }
 
+        .rotated-video {
+            transform: rotate(-90deg); /* Rotates the video 90 degrees */
+            transform-origin: center center; /* Ensures rotation is around the center */
+        }
 
+        .comment {
+            font-size: 16px;
+            color: #333;
+            max-width: 300px;
+            margin-left: 20px; /* Space between video and text */
+        }
 
-</style>
+        .container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
 
-<script>
+        .container > div {
+          display: flex;
+          gap: 30px;
+        }
 
-	function scrollToSection(section) {
-		document.getElementById(section).scrollIntoView({
-			behavior: "smooth"
-		});
-	}
-		
+        .title{
+          text-align: center;
+        }
 
-</script>
+    </style>
 
+    <script>
+        function scrollToSection(section) {
+            document.getElementById(section).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        function playVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.play();
+        }
+
+    </script>
 </head>
 
 <body>
+  <div class="title">
+    <h1 style="font-family: 'CustomFont';">Tom Liu</h1>
+    <img src="photos/Intro.jpg" height="32%" width="32%">
+  </div>
 
-<h1 style = "text-align: center; font-family: 'CustomFont';">Tom Liu: The Lone Sigma</h1>
+    <div style="text-align: center;">
+        <button class="bookmark" onclick="scrollToSection('family')">Family</button>
+        <button class="bookmark" onclick="scrollToSection('piano')">Piano</button>
+        <button class="bookmark" onclick="scrollToSection('hobbies')">Hobbies</button>
+        <button class="bookmark" onclick="scrollToSection('travel')">Travel</button>
+        <button class="bookmark" onclick="scrollToSection('contact')">Contact Me</button>
+    </div>
 
+    <div id="family" class="section">
+      <h1>Family</h1>
+      <div class="container">
+        <img src="photos/DadFamily1.jpg" height = "30%" width = "30%">
+        <img src="photos/DadFamily2.jpg" height = "30%" width = "30%">
+        <div class="comment">
+          <h2>Dad's side of the family</h2>\
+          <p>Before the stupid pandemic, I visited my family in China every summer.</p>
+        </div>
+      </div>
+    </div>
 
-<div style = "text-align: center;">
-<button class = "bookmark" onclick="scrollToSection('family')">Family</button>
-<button class = "bookmark" onclick="scrollToSection('passions')">Passions</button>
-<button class = "bookmark" onclick="scrollToSection('piano')">Piano Log</button>
-<button class = "bookmark" onclick="scrollToSection('travel')">Travel</button>
-<button class = "bookmark" onclick="scrollToSection('contact')">Contact Me</button>
-</div>
+    <div id="piano" class="section">
+        <h1 style="float: left;">Piano!</h1>
+        <svg xml:space="preserve" width="161px" height="120" style="margin-bottom: 40px;">
+          <!-- White keys  -->
+          <rect style="fill:white;stroke:black" x="0" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="23" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="46" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="69" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="92" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="115" y="0" width="23" height="120"/>
+          <rect style="fill:white;stroke:black" x="138" y="0" width="23" height="120"/>
+          <!-- Black keys (overlap with the white keys) -->
+          <rect style="fill:black;stroke:black" x="14.33333" y="0" width="13" height="80"/>
+          <rect style="fill:black;stroke:black" x="41.66666" y="0" width="13" height="80"/>
+          <rect style="fill:black;stroke:black" x="82.25" y="0" width="13" height="80"/>
+          <rect style="fill:black;stroke:black" x="108.25" y="0" width="13" height="80"/>
+          <rect style="fill:black;stroke:black" x="134.75" y="0" width="13" height="80"/>
+          </svg>
 
-<div id = "family" class = "section">
-<h1>Family</h1>
-<img src = "photos/lyon.jpg" width = "300" height = "200"\>
-</div>
+        <div class="container">
+          <img src="photos/JuilliardFirstDay.jpg" height = "40%" width = "40%">
+          <div class="comment">
+            <h2>First Day at Juilliard</h2>
+            <p>I am the only one at Juilliard that I know who still has a yellow ID. Juilliard switched to white IDs in 2019.</p>
+          </div>
+        </div>
 
-<div id = "passions" class = "section">
-<h1>Passions</h1>
-</div>
+      <div class="container">
+        <img src="photos/Graffman.jpg" height = "40%" width = "40%">
+        <div class="comment">
+          <h2>Meeting Graffman</h2>
+          <p>During the Ameri-China International Music Association Festival, I got to meet and play for the legendary Gary Graffman. He taught Lang Lang and Yuja Wang</p>
+        </div>
+      </div>
+  
+    </div>
 
+  <div id="hobbies" class="section">
+    <h1>Hobbies</h1>
+    <div class="container">
+      <img src="photos/SoccerPhoto.jpg" height = "30%" width = "30%">
+      <div class="comment">
+        <h2>Soccer</h2>
+        <p>When I was in elementary school, I dreamed of becoming a professional soccer player. It was one of my first passions.</p>
+      </div>
+    </div>
 
-<div id = "piano" class = "section">
-<h1>Piano Log</h1>
-</div>
+    <div class = "container">
+      <div>
+        <video id="Pen2" height="700px" width="700px" controls>
+          <source src="photos/SoccerPenalty2.mp4" type="video/mp4">
+          Your browser does not support videos.
+        </video>
+      </div>
+    
+      <div>
+        <video id="Pen1" class="rotated-video" height="700px" width="700px" controls>
+          <source src="photos/SoccerPenalty1.mp4" type="video/mp4">
+            Your browser does not support videos.
+          </video>
+      </div>
 
-<div id = "travel" class = "section">
-<h1>Travel</h1>
-</div>
+      <div class="comment">
+        <h2>Soccer Penalties</h2>
+        <p>I played midfield and I was the one who took the penalties for our team. </p>
+      </div>
 
-<div id = "contact" class = "section">
-<h1>Contact Me</h1>
-</div>
+    </div>
 
+  <div class = "container">
+    <img src="photos/Ski.jpg" height = "35%" width = "35%">
+    <img src="photos/Snowboard.jpg" height = "35%" width = "35%">
+    <div class = "comment">
+      <h2>Skiing (and Snowboarding)</h2>
+      <p>Comment</p>
+    </div>
+  </div>
+
+  <div class = "container">
+    <img src="photos/Snowball1.jpg" height = "35%" width = "35%">
+    <img src="photos/Snowball2.jpg" height = "35%" width = "35%">
+    <div class="comment">
+      <h2>Playing with my younger brother</h2>
+      <p>We like to have fun together.</p>
+    </div>
+  </div>
+  
+
+    <div id="travel" class="section">
+        <h1>Travel</h1>
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Contact Me</h1>
+    </div>
 
 </body>
 
+</html>
 
 
-</html> 
 
 
